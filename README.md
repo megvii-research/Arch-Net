@@ -56,12 +56,11 @@ Download teacher models at [google drive](https://drive.google.com/file/d/1vnDsV
 ## Get Started
 
 ### ImageNet Classification (take archnet_resnet18 as an example)
-```sh
-cd ./train_imagenet
-```
 
 train and evaluate
 ```sh
+cd ./train_imagenet
+
 python3 -m torch.distributed.launch --nproc_per_node=8 train_archnet_resnet18.py  -j 8 --weight-bit 2 --feature-bit 4 --lr 0.001 --num_gpus 8 --sync-bn
 ```
 
@@ -72,19 +71,19 @@ python3 -m torch.distributed.launch --nproc_per_node=8 train_archnet_resnet18.py
 
 ### Machine Translation
 
-```sh
-cd ./train_transformer
-```
-
 train a arch-net_transformer of 2w4a
 
 ```sh
+cd ./train_transformer
+
 python3 train_archnet_transformer.py --translate_direction en2de --batch_size 48 --final_epochs 50 --weight_bit 2 --feature_bit 4 --label_smoothing
 ```
 
 evaluate
 
 ```sh
+cd ./evaluate
+
 python3 translate.py --data_pkl ./data/multi30k/m30k_ende_shr.pkl --model path_to_the_outptu_directory/model_max_acc.chkpt
 ```
 
