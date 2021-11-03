@@ -1,5 +1,10 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
+output_results
+*.pth
+*.tar
+*.log
+data
+__pycache__
 *.py[cod]
 *$py.class
 

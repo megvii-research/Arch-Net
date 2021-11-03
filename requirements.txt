@@ -1,0 +1,9 @@
+spacy==2.3.5
+torchtext==0.8.1
+torchfile==0.1.0
+torchnet==0.0.4
+torch==1.7.1
+matplotlib
+tensorboard
+tqdm
+opencv-python
