@@ -76,7 +76,7 @@ train a arch-net_transformer of 2w4a
 ```sh
 cd ./train_transformer
 
-python3 train_archnet_transformer.py --translate_direction en2de --batch_size 48 --final_epochs 50 --weight_bit 2 --feature_bit 4 --lr 1e-3 --weight_decay 1e-6 --label_smoothing
+python3 train_archnet_transformer.py --translate_direction en2de --teacher_model_path ../models/teacher/pretrained_models/transformer_en_de.chkpt --data_pkl ../data/multi30k/m30k_ende_shr.pkl --batch_size 48 --final_epochs 50 --weight_bit 2 --feature_bit 4 --lr 1e-3 --weight_decay 1e-6 --label_smoothing
 ```
 - for arch-net_transformer of 8w8a, use the lr of 1e-3 and the weight decay of 1e-4
 
